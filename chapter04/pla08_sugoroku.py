@@ -36,14 +36,14 @@ for i in range(goalMass):
         allMass.append(effects[0])
     else:
         allMass.append(effects[x])
-print(*allMass,sep = ",")
+print(*allMass,sep = " ")
 
 #休みのフラグ
 isCoolDown = [False,False]
 
 #初期配置
 playerMass[nowMass[nowTurn] - 1] = 3
-print(playerMass)
+print(*playerMass,sep = " ")
 
 #金貨に関するマスの処理
 def goldMass(gold,mass):

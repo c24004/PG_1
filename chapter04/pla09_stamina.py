@@ -4,7 +4,7 @@ import random,sys
 goalMass = 30
 
 #それぞれの所持金
-gold = [5,5]
+gold = [10,10]
 
 #それぞれのスタミナ
 stamina = [6,6]
@@ -96,8 +96,13 @@ while nowMass[1 - nowTurn] != goalMass:
 
     #休みだったら相手の番にする
     if isCoolDown[nowTurn]:
-        input("休みです")
-        print("------------------")
+        print(f"{name[nowTurn]}は休んだ")
+        if stamina[nowTurn] + 3 > 6:
+            stamina[nowTurn] = 6
+        else:
+            stamina[nowTurn] += 3
+        print(f"現在のスタミナ{stamina[nowTurn]}")
+        input("------------------")
         isCoolDown[nowTurn] = False
         nowTurn = 1 - nowTurn
         continue

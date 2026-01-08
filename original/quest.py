@@ -362,6 +362,8 @@ class HelperPrototype(Helper):
             print("プロトタイプ「チャージ完了！」")
             input("プロトタイプ「アルティメットキャノン法、発射！」")
             chara.hit(100)
+            self.chargeCount = 0
+        self.chargeCount += 1
 
     def onMove(self,player):
         if self.chargeCount != 0:
@@ -1166,7 +1168,7 @@ class Elixir(Chara):
             input("特に何も起きなかった")
         else:
             print("あなたは瓶の中身を飲んだ")
-            ElixirBottle("エリクサーの瓶").use(player,None)
+            ElixirBottle("エリクサーの瓶").use(player,self)
         return False
 
 
